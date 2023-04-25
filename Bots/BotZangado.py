@@ -1,28 +1,32 @@
 from Bots.Bot import Bot
 
 class BotZangado(Bot):
-    def __init__(self,nome):
-        self.__nome = nome
+    def __init__(self, nome_usuario):
+        self.__nome = nome_usuario
+        self.__comandos = {1: 'Para quem?', 2: 'Silêncio', 3: 'Pensa com a mente que você mesmo tem um', 4: 'Te manca'}
 
-    #nao esquecer o decorator
+    @property
     def nome(self):
-        pass
+        return nome
 
-    #nao esquecer o decorator
-    def nome(nome):
-        pass
+    @nome.setter
+    def nome(self, nome_usuario):
+        self.nome = nome_usuario
 
     def apresentacao(self):
-        pass
+        print("Grrrrr. Meu nome é Yoda e eu te odeio!")
  
     def mostra_comandos(self):
-        pass
+        print("1 - Bom dia\n2 - Qual o seu nome?\n3 - Quero um conselho\n4 - Adeus")
     
     def executa_comando(self,cmd):
-        pass
+        print(self.__comandos[1])
+        print(self.__comandos[2])
+        print(self.__comandos[3])
+        print(self.__comandos[4])
 
     def boas_vindas(self):
-        pass
+        print("Ótimo te ver por aqui... mas já pode ir embora!")
 
     def despedida(self):
-        pass
+        print("Já vai tarde.")
