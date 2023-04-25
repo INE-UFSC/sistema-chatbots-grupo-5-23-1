@@ -3,7 +3,7 @@ from Bots.Bot import Bot
 class BotZangado(Bot):
     def __init__(self, nome):
         self.__nome = nome
-        super().__comandos = {
+        super().comandos = {
             1: ["Bom dia", 'Para quem?'], 
             2: ["Qual o seu nome?", 'Silêncio.'], 
             3: ["Quero um conselho", 'Pensa com a mente que você mesmo tem um.'], 
@@ -18,7 +18,7 @@ class BotZangado(Bot):
         self.__nome = nome
 
     def apresentacao(self):
-        print(f"Grrrrr. Meu nome é {self.__nome} e eu te odeio!")
+        return f"Grrrrr. Meu nome é {self.__nome} e eu te odeio!"
 
     def boas_vindas(self):
         print("Ótimo te ver por aqui... mas já pode ir embora!")

@@ -19,7 +19,7 @@ class BotFeliz(Bot):
         self.__nome = nome
 
     def apresentacao(self):
-        print(f"Aaaargh. Meu nome é {self.__nome} e eu te odeio!(Mais que o Yoda)")
+        return f"Aaaargh. Meu nome é {self.__nome} e eu te odeio!(Mais que o Yoda)"
     
     def boas_vindas(self):
         boas_vindas = "Tanto bot pra ser escolhido e tu me escolhe???"
