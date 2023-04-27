@@ -4,7 +4,7 @@ class Bot(ABC):
 
     def __init__(self, nome, comandos):
         self.__nome = nome
-        self.__comandos = {}
+        self.__comandos = comandos
 
     @property
     def nome(self):
@@ -28,8 +28,9 @@ class Bot(ABC):
             comandos.append(f'{chave} - {valor[0]}')
         return comandos
         
-    def executa_comando(self,cmd):
-        print(self.__comandos[cmd][1])
+    def executa_comando(self, cmd):
+        if cmd in self.__comandos.keys():
+            return self.__comandos[cmd][1]
 
     @abstractmethod
     def apresentacao():
