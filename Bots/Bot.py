@@ -1,7 +1,4 @@
-##implemente as seguintes classes
-
 from abc import ABC, abstractmethod
-import random as r
 
 class Bot(ABC):
 
@@ -26,11 +23,17 @@ class Bot(ABC):
         self.__comandos = comandos
 
     def mostra_comandos(self):
+        comandos = list()
         for chave, valor in self.__comandos.items():
-            print(f'{chave} - {valor[0]}')
+            comandos.append(f'{chave} - {valor[0]}')
+        return comandos
         
     def executa_comando(self,cmd):
         print(self.__comandos[cmd][1])
+
+    @abstractmethod
+    def apresentacao():
+        pass
 
     @abstractmethod
     def boas_vindas():
