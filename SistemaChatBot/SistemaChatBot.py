@@ -1,10 +1,12 @@
 from Bots.Bot import Bot
 
 class SistemaChatBot:
-    def __init__(self,nomeEmpresa,lista_bots):
-        self.__empresa=nomeEmpresa
+    def __init__(self, nomeEmpresa, lista_bots):
+        self.__empresa = nomeEmpresa
         ##verificar se a lista de bots contém apenas bots
-        self.__lista_bots=lista_bots
+        for item in lista_bots:
+            if isinstance(item, Bot):
+                self.__lista_bots = lista_bots
         self.__bot = None
     
     def boas_vindas(self):
@@ -29,7 +31,8 @@ class SistemaChatBot:
 
     def mostra_comandos_bot(self):
         ##mostra os comandos disponíveis no bot escolhido
-        self.__bot.mostra_comandos()
+        for comando in self.__bot.mostra_comandos():
+            print(comando)
 
 
     def le_envia_comando(self):
@@ -42,7 +45,7 @@ class SistemaChatBot:
         self.boas_vindas()
         self.mostra_menu()
         self.escolhe_bot()
-        self.__bot.boas_vindas()
+        print(self.__bot.boas_vindas())
         while True:
             self.mostra_comandos_bot()
             comando = self.le_envia_comando()
