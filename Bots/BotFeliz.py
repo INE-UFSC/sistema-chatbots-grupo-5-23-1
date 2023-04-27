@@ -2,35 +2,26 @@ from Bots.Bot import Bot
 
 class BotFeliz(Bot):
     def __init__(self, nome):
-        self.__nome = nome
-        super().__comandos = {
-            1: ["Bom dia", "Ótimo dia!!!"],
-            2: ["Qual o seu nome?", f"Olá, me chamo {self.__nome} e estou aqui para te ajudar!"],
+        super().__init__(nome,
+            {1: ["Bom dia", "Bom dia para você também, ótimo dia aliás!!!"],
+            2: ["Qual o seu nome?", f"Olá, me chamo {nome}!!!"],
             3: ["Quero um conselho", "Seja feliz e viva a vida alegramente! :)"],
-            4: ["Adeus", "Poxa! Já está indo? Que pena..."]
-            }
+            4: ["Adeus", "Poxa, já está indo? Até uma próxima vez caro amigo!"]}
+        )
 
     @property
     def nome(self):
-        return self.__nome
+        return super().nome
 
     @nome.setter
     def nome(self, nome):
-        self.__nome = nome
+        super().nome = nome
 
     def apresentacao(self):
-        return f"Aaaargh. Meu nome é {self.__nome} e eu te odeio!(Mais que o Yoda)"
+        return f"Olá meu nome é {super().nome} e estou aqui para te ajudar!!!"
     
     def boas_vindas(self):
-        boas_vindas = "Tanto bot pra ser escolhido e tu me escolhe???"
-        print(boas_vindas)
+        return f"Muito prazer em ser ecolhido por você, meu nome é {super().nome} e me alegra ter sua presença aqui!"
 
     def despedida(self):
-        despedida = "Graças a Deus!"
-        print(despedida)
-
-    def mostra_comandos(self):
-        pass
-    
-    def executa_comando(self,cmd):
-        pass
+        return "Espero ter sido útil para você, me  escolha mais vezes para podermos conversar por mais tempo!"

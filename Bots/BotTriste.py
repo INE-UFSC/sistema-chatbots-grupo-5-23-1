@@ -2,38 +2,26 @@ from Bots.Bot import Bot
 
 class BotTriste(Bot):
     def __init__(self, nome):
-        self.__nome = nome
-        super().__comandos = {
-            1: ['Só dia mesmo...'], 
-            2: ['Pode chamar do que cê quiser'], 
-            3: ['Chore sempre que possível'], 
-            4: ['Mas já vai se despedir? :(']
-            }
+        super().__init__(nome,{
+            1: ["Bom dia", "Só dia mesmo..."], 
+            2: ["Qual o seu nome?","Pode chamar do que cê quiser"], 
+            3: ["Quero um conselho","Chore sempre que possível"], 
+            4: ["Adeus","Mas já vai se despedir? :("]
+            })
 
     @property
     def nome(self):
-        return self.__nome
+        return super().nome
     
     @nome.setter
     def nome(self, nome):
-        self.__nome = nome
+        super().nome = nome
 
-    def apresentacao_triste(self):
-        pass
+    def apresentacao(self):
+        return f"Não gosto de apresentações, elas me deixam com vergonha..."
 
-    def executa_comando_triste(self, cmd):
-        print(self.__cmd[1])
-        print(self.__cmd[2])
-        print(self.__cmd[3])
-        print(self.__cmd[4])
+    def boas_vindas(self):
+        return "Que bom que alguém apareceu por aqui..."
 
-    def boas_vindas_triste(self):
-        boas_vindas = "Que bom que alguém apareceu por aqui..."
-        print(boas_vindas)
-
-    def despedida_triste(self):
-        despedida = "Novamente sozinho..."
-        print(despedida)
- 
-    def mostra_comandos_triste(self, cmd):
-        pass
+    def despedida(self):
+        return "Novamente sozinho..."
