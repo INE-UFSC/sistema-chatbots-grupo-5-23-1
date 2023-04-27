@@ -3,10 +3,10 @@ from Bots.Bot import Bot
 class BotZangado(Bot):
     def __init__(self, nome):
         super().__init__(nome,{
-            1: ["Bom dia", 'Para quem?'], 
-            2: ["Qual o seu nome?", 'Silêncio.'], 
-            3: ["Quero um conselho", 'Pensa com a mente que você mesmo tem um.'], 
-            4: ["Adeus", 'Te manca.']
+            '1': ["Bom dia", 'Para quem?'], 
+            '2': ["Qual o seu nome?", 'Silêncio.'], 
+            '3': ["Quero um conselho", 'Pensa com a mente que você mesmo tem um.'], 
+            '4': ["Adeus", 'Te manca.']
             })
 
     @property
