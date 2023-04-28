@@ -7,8 +7,7 @@ class BotFeliz(Bot):
             '2': ["Qual o seu nome?", f"Olá, me chamo {nome}!!!"],
             '3': ["Quero um conselho", "Seja feliz e viva a vida alegramente! :)"],
             '4': ["Adeus", "Poxa, já está indo? Até uma próxima vez caro amigo!"]
-            }
-        )
+            })
 
     @property
     def nome(self):
