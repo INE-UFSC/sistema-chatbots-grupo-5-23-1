@@ -3,10 +3,15 @@ from Bots.Bot import Bot
 class SistemaChatBot:
     def __init__(self, nomeEmpresa, lista_bots):
         self.__empresa = nomeEmpresa
+        self.__lista_bots = list()
         for item in lista_bots:
-            if isinstance(item, Bot):
-                self.__lista_bots = lista_bots
+            self.inclui_bot(item)
         self.__bot = None
+
+    def inclui_bot(self, bot: Bot):
+        if isinstance(bot, Bot):
+            self.__lista_bots.append(bot)
+        return
 
     #mostra mensagem de boas vindas do sistema
     def boas_vindas(self):
