@@ -1,6 +1,6 @@
 from Bots.Bot import Bot
 
-class BotTriste(Bot):
+class BotDesconfiado(Bot):
     def __init__(self, nome):
         super().__init__(nome,{
             '1': ["Bom dia", "Ih, ah lá...Tá querendo pedir algo, neh?"], 
