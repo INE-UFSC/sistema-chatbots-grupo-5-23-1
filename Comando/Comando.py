@@ -19,6 +19,7 @@ class Comando():
     # retorna uma resposta aleatória
     def getRandomResposta(self):
         resposta_aleatoria = random.choice(self.__respostas)
+        return resposta_aleatoria
     
     # adiciona resposta
     def addResposta(self, resposta):
