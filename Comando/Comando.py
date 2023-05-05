@@ -1,24 +1,35 @@
-class Comando:
+import random
+
+
+class Comando():
     # recebe o id (inteiro), a mensagem e as respostas (opcional)
-    def __init__(self, id, msg, respostas = []):
-        pass
+    def __init__(self, id, mensagem, respostas = []):
+        self.__id = id
+        self.__mensagem = mensagem
+        self.__respostas = respostas
 
-    # get id
+    @property
     def id(self):
-        pass
+        return self.__id
 
-    # get mensagem
+    @property
     def mensagem(self):
-        pass 
+        return self.__mensagem 
 
     # retorna uma resposta aleatória
     def getRandomResposta(self):
-        pass
+        resposta_aleatoria = random.choice(self.__respostas)
     
     # adiciona resposta
     def addResposta(self, resposta):
-        pass
+        if resposta not in self.__respostas:
+            self.__respostas.append(resposta)
+        else:
+            print('Resposta já existente!')
 
     # remove resposta (opcional)
     def delResposta(self, resposta):
-        pass
+        if resposta in self.__respostas:
+            self.__respostas.pop(resposta)
+        else:
+            print('Resposta não existente!')
