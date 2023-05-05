@@ -1,13 +1,13 @@
+
+
 from Bots.Bot import Bot
+from Comando.Comando import Comando
 
 class BotDesconfiado(Bot):
-    def __init__(self, nome):
-        super().__init__(nome,{
-            '1': ["Bom dia", "Ih, ah lá...Tá querendo pedir algo, neh?"], 
-            '2': ["Qual o seu nome?","Vish, fiz algo de errado?"], 
-            '3': ["Quero um conselho","Não faça nada ilegal! Afinal, é errado...e não gostos de coisas erradas! :#"], 
-            '4': ["Adeus","Tchau, tchau! Se cuida!...(eita, será que fiz algo de errado?)"]
-            })
+    def __init__(self, nome: str, comandos: Comando, urlJSON: str):
+        self.__nome = nome
+        self.__urlJSON = urlJSON
+        self.__comandos = comandos
 
     @property
     def nome(self):
@@ -25,3 +25,9 @@ class BotDesconfiado(Bot):
 
     def despedida(self):
         return "Ufa essa foi por pouco...Quer dizer...Bye!s"
+
+    def mostra_comando(self):
+        pass
+
+    def cria_comandos(self):
+        pass
