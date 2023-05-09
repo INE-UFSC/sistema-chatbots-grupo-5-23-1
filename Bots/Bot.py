@@ -24,13 +24,18 @@ class Bot(ABC):
 
     def mostra_comandos(self):
         comandos = list()
-        for chave, valor in self.__comandos.items():
-            comandos.append(f'{chave} - {valor[0]}')
+        for comando in self.comandos:
+            comandos.append(f'{comando.id} - {comando.mensagem}')
         return comandos
         
     def executa_comando(self, cmd):
-        if cmd in self.__comandos.keys():
-            return self.__comandos[cmd][1]
+        comandos = dict()
+        for comando in self.comandos:
+            chave = comando.id
+            mensagem = comando.getRandomResposta()
+            comandos[chave] = mensagem
+        if cmd in comandos.keys():
+            return comandos[cmd]
 
     @abstractmethod
     def apresentacao():

@@ -1,13 +1,14 @@
 from Bots.Bot import Bot
+from Comando.Comando import Comando
 
 class BotTriste(Bot):
     def __init__(self, nome):
-        super().__init__(nome,{
-            '1': ["Bom dia", "Só dia mesmo..."], 
-            '2': ["Qual o seu nome?","Vex, mas tanto faz também, pode chamar do que cê quiser..."], 
-            '3': ["Quero um conselho","Chore sempre que possível ︶︹︺"], 
-            '4': ["Adeus","Mas já vai se despedir? ╥﹏╥"]
-            })
+        super().__init__(nome,[
+            Comando('1', "Bom dia", "Só dia mesmo..."), 
+            Comando('2', "Qual o seu nome?","Vex, mas tanto faz também, pode chamar do que cê quiser..."), 
+            Comando('3', "Quero um conselho","Chore sempre que possível ︶︹︺"), 
+            Comando('4', "Adeus","Mas já vai se despedir? ╥﹏╥")
+            ])
 
     @property
     def nome(self):
