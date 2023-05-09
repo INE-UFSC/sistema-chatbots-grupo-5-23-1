@@ -6,7 +6,7 @@ class Comando():
     def __init__(self, id, mensagem, respostas = []):
         self.__id = id
         self.__mensagem = mensagem
-        self.__respostas = respostas
+        self.__respostas = [respostas]
 
     @property
     def id(self):

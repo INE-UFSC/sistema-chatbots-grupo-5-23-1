@@ -20,7 +20,6 @@ class SistemaChatBot:
     
     #mostra o menu de escolha de bots
     def mostra_menu(self):
-        
         print("Selecione um dos bots disponíveis:\n")
         for i, bot in enumerate(self.__lista_bots):
             print(f"{i} - Bot: {bot.nome} - Apresentação: {bot.apresentacao()}")
@@ -45,9 +44,9 @@ class SistemaChatBot:
 
     #mostra os comandos disponíveis no bot escolhido
     def mostra_comandos_bot(self):
-
-        for comando in self.__bot.mostra_comandos():
-            print(comando)
+        
+        for linha in self.__bot.mostra_comandos():
+            print(linha)
 
     def __imprime_resposta_bot(self, resposta):
         print(f"--> {self.__bot.nome} diz: {resposta}\n")
@@ -77,17 +76,20 @@ class SistemaChatBot:
 
         self.boas_vindas()
         print()
-        self.mostra_menu()
-        print()
-        self.escolhe_bot()
-        print()
-        self.__imprime_resposta_bot(self.__bot.boas_vindas())
-
-        while True:
-            self.mostra_comandos_bot()
+        if self.__lista_bots == []:
+            print('Não temos bots disponíveis no momento, volte mais tarde!')
+        else:
+            self.mostra_menu()
             print()
-            comando = self.le_envia_comando()
-            if comando == '-1':
-                break
+            self.escolhe_bot()
+            print()
+            self.__imprime_resposta_bot(self.__bot.boas_vindas())
 
-        self.__imprime_resposta_bot(self.__bot.despedida())
+            while True:
+                self.mostra_comandos_bot()
+                print()
+                comando = self.le_envia_comando()
+                if comando == '-1':
+                    break
+
+            self.__imprime_resposta_bot(self.__bot.despedida())
